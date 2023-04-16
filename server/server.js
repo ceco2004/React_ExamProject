@@ -1364,7 +1364,42 @@
         },
         comments: {
         
+        },
+
+
+        animals: {
+            "1": {
+              "name":"Gosho",
+              "age":"3",
+              "owner":"Ivan"
+           },
+           "2": {
+              "name":"Ivan",
+              "age":"2",
+              "owner":"Gosho"
+           },
+           "3": {
+              "name":"Pufi",
+              "age":"3",
+              "owner":"Ceco"
+           },
+           "4": {
+              "name":"Dasy",
+              "age":"1",
+              "owner":"Ceco"
+           },
+           "5": {
+              "name":"Bark",
+              "age":"7",
+              "owner":"Vasil"
+           },
+           "6": {
+              "name":"Pisi",
+              "age":"2",
+              "owner":"Gergana"
+           }
         }
+
     };
     var rules$1 = {
         users: {
