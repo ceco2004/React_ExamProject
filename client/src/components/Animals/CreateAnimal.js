@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 export default function CreateAnimal() {
 
+    const navigate = useNavigate();
 
     const { values, changeHandler, validateForm, errors } = useForm({
         name: "",
@@ -21,18 +22,19 @@ export default function CreateAnimal() {
 
 
 
-    const navigate = useNavigate();
     const animalContext = useContext(AnimalContext);
     const { accessToken, email } = useContext(AuthContext);
 
     async function onSuggestHandler(e) {
         e.preventDefault();
 
+        console.log("errors");
+
         const animalData = { ...values, ownerEmail: email };
 
         await animalContext.onCreateAnimal(animalData, accessToken)
 
-       // navigate("/animals");
+        navigate("/animals");
 
     }
 
@@ -45,7 +47,7 @@ export default function CreateAnimal() {
             <div className="mb-3" >
                 <label htmlFor="exampleFormControlInput1" className="form-label">Name</label>
                 <input type="text" name="name" className="form-control" id="exampleFormControlInput1" placeholder="Pet's name..." value={values.name} onChange={changeHandler} onBlur={validateForm} />
-                {(errors.name) && (
+                {errors.name && (
                     <p className='text-danger'>{errors.name}</p>
                 )}
             </div>
@@ -91,8 +93,11 @@ export default function CreateAnimal() {
             </div>
 
             <div className="mb-3">
-                <label for="exampleFormControlTextarea1" className="form-label">Description</label>
+                <label htmlFor="exampleFormControlTextarea1" className="form-label">Description</label>
                 <textarea className="form-control" name="description" id="exampleFormControlTextarea1" rows="3" placeholder="Short pet's description..." value={values.description} onChange={changeHandler} onBlur={validateForm} />
+                {(errors.description) && (
+                    <p className='text-danger'>{errors.description}</p>
+                )}
             </div>
 
 

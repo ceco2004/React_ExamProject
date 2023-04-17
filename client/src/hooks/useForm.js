@@ -14,11 +14,15 @@ export default function useForm(initValues) {
         password: "Password must be between 3 and 6 characters long ",
         notMatch: "Passwords don't match ",
         email: "Email is not valid ",
+        age: "Value must be positive number ",
+        city: "Value must be at least 2 characters ",
+        imageUrl: "Value must be not blank ",
+        description: "Description must be at least 50 characters ",
     }
 
 
     function validateForm(e) {
-
+        console.log("Validating form...")
         let message = "";
 
 
@@ -36,8 +40,34 @@ export default function useForm(initValues) {
                 break;
             case "email":
                 if (!values[e.target.name].includes("@")) {
-                    message = messages.email
+                    message = messages.email;
                 }
+                break;
+            case "name":
+            case "city":
+                console.log("check name/city...")
+                if(values[e.target.name].length < 2) {
+                     message = messages.city;
+                 }
+                 break;
+            case "age":
+            case "weight":
+                if(Number(values[e.target.name]) <= 0) {
+                    message = messages.age;
+                }
+                break;
+            case "imageUrl":
+            case "ownerPhone":
+                if(values[e.target.name].length < 1){
+                    message = messages.imageUrl;
+                }
+                break;
+            case "description":
+                if(values[e.target.name].length < 50){
+                    message = messages.description;
+                }
+                break;
+
 
 
             default:

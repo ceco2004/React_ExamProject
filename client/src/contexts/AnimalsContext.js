@@ -1,5 +1,4 @@
 import { createContext, useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 
 import * as animalServices from '../services/animalServices';
 
@@ -13,17 +12,13 @@ export function AnimalsContextProvider({ children }) {
     useEffect(() => {
         animalServices.getAll()
         .then(a => setAnimals(a))
-        .then(console.log)
-       // setAnimals(animals);
     }, [])
    
 
     async function onCreateAnimal(animalData, accessToken) {
-        //create animal if success add it to the state
-        //TODO...
-
+      
         const animal = animalServices.createAnimal(animalData, accessToken);
-        setAnimals(state => ({...state, animal}));
+        setAnimals(state => ([...state, animal]));
 
     }
 

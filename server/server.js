@@ -1327,6 +1327,14 @@
             "847ec027-f659-4086-8032-5173e2f9c93a": {
                 email: "john@abv.bg",
                 hashedPassword: "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1"
+            },
+            "bd72fd90-bde1-487d-8abb-5e12123a4c2b": {
+                email: "ceco2004@abv.bg",
+                hashedPassword: "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1"
+            },
+            "d8a18587-b43b-4de0-b0fca65ce27059dd" : {
+                email: "tzwaro82@abv.bg",
+                hashedPassword: "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1"
             }
         },
         sessions: {
@@ -1408,7 +1416,7 @@
                 "_createdOn": 1681747810191
             },
             "d1d29090-8503-43f0-b96c-673746fd9808": {
-                "_ownerId": "d8a18587-b43b-4de0-b0fc-a65ce27059dd",
+                "_ownerId":- "d8a18587-b43b-4de0-b0fca65ce27059dd",
                 "name": "Stamat",
                 "age": "21",
                 "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Giraffe_standing.jpg",
