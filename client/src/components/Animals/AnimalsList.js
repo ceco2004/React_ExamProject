@@ -1,7 +1,9 @@
+
+
 export default function AnimalsList() {
+
     return (
         <section className="carousel-inner py-4">
-
 
             <div className="carousel-item active">
                 <div className="container">

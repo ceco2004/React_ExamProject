@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../contexts/AuthContext";
 
 export default function Navbar() {
+
+    const context = useContext(AuthContext);
 
     return (
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -10,29 +14,42 @@ export default function Navbar() {
                     <span className="navbar-toggler-icon"></span>
                 </button>
 
+
+                <h3>Hello {context.email ? context.email : "Guest"}</h3>
+
                 <div style={{ right: "150px" }}>
                     <div className="collapse navbar-collapse" id="navbarNav" >
                         <ul className="navbar-nav">
 
                             <li className="nav-item">
-                                <Link className="nav-link active" aria-current="page" href="#">Home</Link>
+                                <Link className="nav-link active" aria-current="page" to="/">Home</Link>
                             </li>
                             <li className="nav-item">
                                 <Link className="nav-link" href="#">Animals</Link>
                             </li>
-                            <li className="nav-item">
-                                <Link className="nav-link" href="#">Pricing</Link>
-                            </li>
+                            {context.email && (
+                                <li className="nav-item">
+                                    <Link className="nav-link" to="publish">Publish</Link>
+                                </li>
+                            )}
                             <li className="nav-item">
                                 <Link className="nav-link disabled">Disabled</Link>
                             </li>
-                            <li className="nav-item">
-                                <Link className="nav-link" href="#">Login</Link>
-                            </li><li className="nav-item">
-                                <Link className="nav-link" href="#">Register</Link>
-                            </li><li className="nav-item">
-                                <Link className="nav-link" href="#">Logout</Link>
-                            </li>
+                            {!context.email && (
+                                <>
+                                    <li className="nav-item">
+                                        <Link className="nav-link" to="/login">Login</Link>
+                                    </li>
+                                    <li className="nav-item">
+                                        <Link className="nav-link" to="/register">Register</Link>
+                                    </li>
+                                </>
+                            )}
+                            {context.email && (
+                                <li className="nav-item">
+                                    <Link className="nav-link" to="/logout">Logout</Link>
+                                </li>
+                            )}
                         </ul>
                     </div>
                 </div>
