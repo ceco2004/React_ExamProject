@@ -6,30 +6,30 @@ export const AuthContext = createContext();
 
 export function AuthContextProvider({ children }) {
 
-    let [context, setContext] = useState({});
+    const [context, setContext] = useState({});
 
-    async function onLogin(userData){
-        userServices.Login(userData).then(result => {
+    async function onLogin(userData) {
+        userServices.login(userData).then(result => {
             setContext(result)
         });
     }
 
 
-    async function onRegister(userData){
-        userServices.Register(userData).then(result => {
+    async function onRegister(userData) {
+        userServices.register(userData).then(result => {
             setContext(result)
         });
     }
 
 
-    async function onLogout(){
-        await userServices.Logout(context.accessToken);
-        setContext({});
+    async function onLogout(accessToken) {
+    
+         await userServices.logout(accessToken).then(() => setContext({}))
     }
 
 
 
-    let contextData = {
+    const contextData = {
         ...context,
         onLogin,
         onRegister,

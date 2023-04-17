@@ -1368,36 +1368,84 @@
 
 
         animals: {
-            "1": {
-              "name":"Gosho",
-              "age":"3",
-              "owner":"Ivan"
-           },
-           "2": {
-              "name":"Ivan",
-              "age":"2",
-              "owner":"Gosho"
-           },
-           "3": {
-              "name":"Pufi",
-              "age":"3",
-              "owner":"Ceco"
-           },
-           "4": {
-              "name":"Dasy",
-              "age":"1",
-              "owner":"Ceco"
-           },
-           "5": {
-              "name":"Bark",
-              "age":"7",
-              "owner":"Vasil"
-           },
-           "6": {
-              "name":"Pisi",
-              "age":"2",
-              "owner":"Gergana"
-           }
+            "1f742ac5-0974-4798-8890-30ae5df40de8": {
+                "_ownerId": "bd72fd90-bde1-487d-8abb-5e12123a4c2b",
+                "name": "Pesho",
+                "age": "3",
+                "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Lion_%28Panthera_leo%29_male_6y.jpg/200px-Lion_%28Panthera_leo%29_male_6y.jpg",
+                "weight": "78",
+                "city": "Sofia",
+                "description": "Pesho is a little catty...",
+                "ownerPhone": "112",
+                "ownerEmail": "ceco2004@abv.bg",
+                "adopterId": "",
+                "_createdOn": 1681747381400
+            },
+            "32071180-2601-4484-8ef3-93f93e048854": {
+                "_ownerId": "bd72fd90-bde1-487d-8abb-5e12123a4c2b",
+                "name": "Pesho",
+                "age": "3",
+                "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Lion_%28Panthera_leo%29_male_6y.jpg/200px-Lion_%28Panthera_leo%29_male_6y.jpg",
+                "weight": "78",
+                "city": "Sofia",
+                "description": "Pesho is a little catty...",
+                "ownerPhone": "112",
+                "ownerEmail": "ceco2004@abv.bg",
+                "adopterId": "",
+                "_createdOn": 1681747412001
+            },
+            "11c5548f-37ed-4f26-a9e2-838f36ec627d": {
+                "_ownerId": "bd72fd90-bde1-487d-8abb-5e12123a4c2b",
+                "name": "Marcho",
+                "age": "7",
+                "imageUrl": "https://cdn.britannica.com/20/93520-050-3E663489/Puma.jpg",
+                "weight": "62",
+                "city": "Plovdiv",
+                "description": "Marcho is prety cat, with bad character...",
+                "ownerPhone": "911",
+                "ownerEmail": "ceco2004@abv.bg",
+                "adopterId": "",
+                "_createdOn": 1681747810191
+            },
+            "d1d29090-8503-43f0-b96c-673746fd9808": {
+                "_ownerId": "d8a18587-b43b-4de0-b0fc-a65ce27059dd",
+                "name": "Stamat",
+                "age": "21",
+                "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Giraffe_standing.jpg",
+                "weight": "316",
+                "city": "Burgas",
+                "description": "Stamat see all from his tower, but have a big problem - can't tie his shoes...",
+                "ownerPhone": "*88",
+                "ownerEmail": "tzwaro82@abv.bg",
+                "adopterId": "",
+                "_createdOn": 1681748091300
+            },
+            "2a999ab3-d6b5-4446-8810-4f5707ce5413": {
+                "_ownerId": "d8a18587-b43b-4de0-b0fc-a65ce27059dd",
+                "name": "Maria",
+                "age": "8",
+                "imageUrl": "https://www.nhm.ac.uk/content/dam/nhmwww/discover/megalodon/megalodon_warpaint_shutterstock-full-width.jpg.thumb.1160.1160.jpg",
+                "weight": "198",
+                "city": "Varna",
+                "description": "Maria is like a golden fish, but don't perform a wishes...",
+                "ownerPhone": "123",
+                "ownerEmail": "tzwaro82@abv.bg",
+                "adopterId": "",
+                "_createdOn": 1681748264586
+            },
+            "c4e8c18a-1670-43cf-bd96-b9d210cce775": {
+                "_ownerId": "d8a18587-b43b-4de0-b0fc-a65ce27059dd",
+                "name": "Bilqna",
+                "age": "8",
+                "imageUrl": "https://www.saferbrand.com/media/Articles/Safer-Brand/identify-and-get-rid-of-venmous-snakes.jpg",
+                "weight": "14",
+                "city": "Krichim",
+                "description": "Bilqna like to take a sun shower.",
+                "ownerPhone": "666",
+                "ownerEmail": "tzwaro82@abv.bg",
+                "adopterId": "",
+                "_createdOn": 1681748375468
+            }
         }
 
     };

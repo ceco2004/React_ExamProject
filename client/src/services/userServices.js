@@ -2,7 +2,7 @@ import * as url from '../constans/url';
 
 
 
-export async function Login(userData){
+export async function login(userData){
 
     const response = await fetch(url.loginUrl, {
         method: "POST",
@@ -16,7 +16,9 @@ export async function Login(userData){
     return result;
 }
 
-export async function Register(userData){
+
+
+export async function register(userData){
     const response = await fetch(url.registerUrl, {
         method: "POST",
         headers: {
@@ -30,14 +32,18 @@ export async function Register(userData){
 }
 
 
-export async function Logout(accessToken){
+export async function logout(accessToken){
+
     const response = await fetch(url.logOutUrl, {
         headers:{
             "X-Authorization": accessToken
         }
     });
 
+    //const result = await response.json();
+    //return result;
+
     // must be statusCode 204
-    console.log("Status: " + response.status); 
-    console.log("OK: " + response.ok);
+    // console.log("Status: " + response.status); 
+    // console.log("OK: " + response.ok);
 }

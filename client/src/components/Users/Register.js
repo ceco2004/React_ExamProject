@@ -17,10 +17,7 @@ export default function Login() {
 
             const userData = { email: values.email, password: values.password };
             
-            authContext.onRegister(userData);
-            // userServices.Register(userData).then(result => {
-            //     authContext = result
-            // }).then(() => console.log(authContext));
+           await authContext.onRegister(userData);
             
             navigate("/");
         }
@@ -30,6 +27,7 @@ export default function Login() {
 
     return (
         <form style={{ width: "50%", margin: "50px" }} onSubmit={onRegisterHandler}>
+            <h3>Register</h3>
             <div className="mb-3" >
                 <label htmlFor="exampleFormControlInput1" className="form-label">Email address</label>
                 <input type="email" name="email" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com" value={values.email} onChange={changeHandler} onBlur={validateForm} />
@@ -54,7 +52,7 @@ export default function Login() {
                 )}
             </div>
 
-            <button type="sybmit" class="btn btn-primary">Register</button>
+            <button type="sybmit" className="btn btn-primary">Register</button>
 
 
         </form>

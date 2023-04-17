@@ -25,15 +25,15 @@ export default function Navbar() {
                                 <Link className="nav-link active" aria-current="page" to="/">Home</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" href="#">Animals</Link>
+                                <Link className="nav-link" to="/animals">Animals</Link>
                             </li>
                             {context.email && (
                                 <li className="nav-item">
-                                    <Link className="nav-link" to="publish">Publish</Link>
+                                    <Link className="nav-link" to="/publish">Publish</Link>
                                 </li>
                             )}
                             <li className="nav-item">
-                                <Link className="nav-link disabled">Disabled</Link>
+                                <Link className="nav-link" to="/about">About</Link>
                             </li>
                             {!context.email && (
                                 <>
