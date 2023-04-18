@@ -9,14 +9,20 @@ export function AuthContextProvider({ children }) {
     const [context, setContext] = useState({});
 
     async function onLogin(userData) {
-        userServices.login(userData).then(result => {
+        userServices.login(userData)
+        .then(result => {
+           
+            if(result.error){
+                return result;
+            }
             setContext(result)
         });
     }
 
 
     async function onRegister(userData) {
-        userServices.register(userData).then(result => {
+        userServices.register(userData)
+        .then(result => {
             setContext(result)
         });
     }
@@ -24,7 +30,8 @@ export function AuthContextProvider({ children }) {
 
     async function onLogout(accessToken) {
     
-         await userServices.logout(accessToken).then(() => setContext({}))
+         await userServices.logout(accessToken)
+         .then(() => setContext({}));
     }
 
 

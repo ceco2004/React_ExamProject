@@ -12,9 +12,9 @@ export default function AnimalCard({
     
 
     return (
-        <div className="col-lg-4 d-none d-lg-block" style={{marginBottom: "30px"}}>
+        <div className="col-lg-4 d-none d-lg-block" style={{marginBottom: "30px", width: "300px", height: "650px", }}>
         <div className="card">
-            <img
+            <img style={{margin: "10px", width: "250px", height: "150px", }}
                 src={imageUrl}
                 className="card-img-top"
                 alt={`${name}-imageeeee`}

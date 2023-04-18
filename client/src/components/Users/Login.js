@@ -15,9 +15,12 @@ export default function Login() {
 
         const userData = { email: values.email, password: values.password };
 
-        authContext.onLogin(userData);
+        const result = await authContext.onLogin(userData);
 
-        navigate("/");
+        if(result?.error){
+            navigate("error")
+        }
+        navigate("/animals");
 
     }
 
@@ -27,7 +30,7 @@ export default function Login() {
             <h3>Login</h3>
             <div className="mb-3" >
                 <label htmlFor="exampleFormControlInput1" className="form-label">Email address</label>
-                <input type="email" name="email" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com" value={values.email} onChange={changeHandler} onBlur={validateForm} />
+                <input type="email" autoComplete="on" name="email" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com" value={values.email} onChange={changeHandler} onBlur={validateForm} />
                 {(values.email.length > 0 && errors.email) && (
                     <p className='text-danger'>{errors.email}</p>
                 )}

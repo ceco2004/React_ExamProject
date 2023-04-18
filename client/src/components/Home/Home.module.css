@@ -1,0 +1,16 @@
+.center {
+    text-align: center;
+    padding: 120px;
+  }
+
+.red {
+    color: red;
+  }
+
+.background {
+    background-color: blue;
+  }
+
+ .full-screen {
+    height: 100vh;
+ } 

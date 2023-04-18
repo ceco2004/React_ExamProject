@@ -30,15 +30,9 @@ export default function AnimalCreate() {
 
         const animalData = { ...values, ownerEmail: email };
 
-        if(Object.values(animalData).some(e => e.length === 0)){
-            errors.description = "Can't submit empty form"
-            navigate("/publish")
-        }else{
-            await animalContext.onCreateAnimal(animalData, accessToken)
-            navigate("/animals");
-        }
+        await animalContext.onCreateAnimal(animalData, accessToken)
+         navigate("/animals");
 
-      
     }
 
 

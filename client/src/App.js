@@ -1,4 +1,4 @@
-
+import { useContext } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 
@@ -11,13 +11,24 @@ import Logout from './components/Users/Logout';
 import AnimalCreate from './components/Animals/AnimalCreate';
 import AnimalInfo from './components/Animals/AnimalInfo';
 import AnimalEdit from './components/Animals/AnimalEdit';
+import E404 from './components/404/E404';
+import Home from './components/Home/Home';
+
+import ForLogged from './components/RouteGuard/ForLogged';
+import ForGuests from './components/RouteGuard/ForGuests';
+
+
+
 
 import { AnimalsContextProvider } from './contexts/AnimalsContext';
+import { AuthContext } from './contexts/AuthContext';
+import LoginError from './components/Errors/LoginError';
 
 
 function App() {
+     const auth = useContext(AuthContext);
 
-
+     let isLogged = !!auth?._id;
 
     return (
 
@@ -26,16 +37,21 @@ function App() {
 
             <AnimalsContextProvider>
                 <Routes>
-                    <Route path='/' element={<h1>Hello from React</h1>} />
-                    <Route path='/login' element={<Login />} />
-                    <Route path='/register' element={<Register />} />
-                    <Route path='/logout' element={<Logout />} />
+                    <Route path='/' element={<Home />} />
 
-                    <Route path='/publish' element={<AnimalCreate />} />
+                    <Route path='/login' element={ForGuests({isLogged, redirect: <Login />})} />
+                    <Route path='/register' element={ForGuests({isLogged, redirect: <Register />})} />
+                    <Route path='/logout' element={ForLogged({isLogged, redirect: <Logout />})} />
+
+                    <Route path='/publish' element={ForLogged({isLogged, redirect: <AnimalCreate />})} />
                     <Route path='/animals' element={<Animals />} />
                     <Route path='/animals/:id' element={<AnimalInfo />} />
                     <Route path='/animals/:id/edit' element={<AnimalEdit />} />
                     <Route path='/animals/:id/remove' element={<AnimalInfo />} />
+
+                    <Route path='/login/error' element={<LoginError />} />
+
+                    <Route path='*' element={<E404 />} />
 
                 </Routes>
             </AnimalsContextProvider>

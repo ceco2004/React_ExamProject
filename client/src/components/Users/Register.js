@@ -38,7 +38,7 @@ export default function Login() {
 
             <div className="mb-3" >
                 <label htmlFor="exampleFormControlInput2" className="form-label">Password</label>
-                <input type="password" name="password" className="form-control" id="exampleFormControlInput2" placeholder="3 - 6 symbols" value={values.password} onChange={changeHandler} onBlur={validateForm} />
+                <input type="password" autoComplete="on" name="password" className="form-control" id="exampleFormControlInput2" placeholder="3 - 6 symbols" value={values.password} onChange={changeHandler} onBlur={validateForm} />
                 {((values.password.length > 0 && errors.password) || errors.match) && (
                     <p className='text-danger'>{errors.password || errors.match}</p>
                 )}
@@ -46,7 +46,7 @@ export default function Login() {
 
             <div className="mb-3" >
                 <label htmlFor="exampleFormControlInput3" className="form-label">Repeat password</label>
-                <input type="password" name="rePass" className="form-control" id="exampleFormControlInput3" placeholder="3 - 6 symbols" value={values.rePass} onChange={changeHandler} onBlur={validateForm} />
+                <input type="password" autoComplete="on" name="rePass" className="form-control" id="exampleFormControlInput3" placeholder="3 - 6 symbols" value={values.rePass} onChange={changeHandler} onBlur={validateForm} />
                 {((values.rePass.length > 0  && errors.rePass) || errors.match) && (
                     <p className='text-danger'>{errors.rePass || errors.match}</p>
                 )}

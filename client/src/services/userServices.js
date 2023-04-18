@@ -4,16 +4,28 @@ import * as url from '../constans/url';
 
 export async function login(userData){
 
-    const response = await fetch(url.loginUrl, {
-        method: "POST",
-        headers: {
-            "content-type": "application/json"
-        },
-        body: JSON.stringify(userData)
-    });
+    try{
+        
 
-    const result = await response.json();
-    return result;
+        const response = await fetch( url.loginUrl, {
+            method: "POST",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(userData)});
+            
+            const result = await response.json();
+            
+            
+            return result;
+
+        } catch(e){
+
+            console.log("error");
+            return {
+                error: e
+            }
+        }
 }
 
 
@@ -26,7 +38,6 @@ export async function register(userData){
         },
         body: JSON.stringify(userData)
     });
-
     const result = await response.json();
     return result;
 }
