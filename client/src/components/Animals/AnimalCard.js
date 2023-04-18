@@ -9,6 +9,8 @@ export default function AnimalCard({
                                     description,
 }){
 
+    
+
     return (
         <div className="col-lg-4 d-none d-lg-block" style={{marginBottom: "30px"}}>
         <div className="card">

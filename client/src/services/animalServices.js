@@ -1,6 +1,19 @@
 import * as url from '../constans/url';
 
 
+export async function remove(id, accessToken){
+    const response = await fetch(`${url.animalBaseUrl}/${id}`, {
+        method: "DELETE",
+        headers: {
+            "X-Authorization": accessToken
+        }
+    });
+
+    const result = await response.json();
+    return result;
+}
+
+
 
 export async function update(animalData, accessToken){
     const response = await fetch(`${url.animalBaseUrl}/${animalData._id}`, {

@@ -13,7 +13,7 @@ export default function AnimalEdit() {
     const [animal, setAnimal] = useState({});
 
     let { values, changeHandler, validateForm, errors } = useForm({});
-
+    
 
     useEffect(() => {
         animalServices.getOne(id)

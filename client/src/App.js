@@ -35,6 +35,7 @@ function App() {
                     <Route path='/animals' element={<Animals />} />
                     <Route path='/animals/:id' element={<AnimalInfo />} />
                     <Route path='/animals/:id/edit' element={<AnimalEdit />} />
+                    <Route path='/animals/:id/remove' element={<AnimalInfo />} />
 
                 </Routes>
             </AnimalsContextProvider>
