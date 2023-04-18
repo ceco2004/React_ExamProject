@@ -17,7 +17,11 @@ export default function Login() {
 
             const userData = { email: values.email, password: values.password };
             
-           await authContext.onRegister(userData);
+           const result = await authContext.onRegister(userData);
+//totdo
+           if(result?.error){
+            navigate("/")
+           }
             
             navigate("/");
         }

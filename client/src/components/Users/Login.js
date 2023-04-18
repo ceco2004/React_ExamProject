@@ -18,7 +18,7 @@ export default function Login() {
         const result = await authContext.onLogin(userData);
 
         if(result?.error){
-            navigate("error")
+           return navigate("error")
         }
         navigate("/animals");
 

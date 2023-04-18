@@ -75,7 +75,7 @@ export default function AnimalInfo() {
                                         <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
                                     </div>
                                     <div className="modal-body">
-                                        <h3 className="text-danger">Are You sure to complete remove {animal.name}</h3>
+                                        <h3 className="text-danger">Are You sure to completely remove ==- {animal.name} -==</h3>
                                     </div>
                                     <div className="modal-footer">
                                         <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>

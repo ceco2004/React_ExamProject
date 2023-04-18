@@ -23,6 +23,9 @@ export function AuthContextProvider({ children }) {
     async function onRegister(userData) {
         userServices.register(userData)
         .then(result => {
+            if(result.error){
+                return result;
+            }
             setContext(result)
         });
     }

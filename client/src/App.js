@@ -16,6 +16,7 @@ import Home from './components/Home/Home';
 
 import ForLogged from './components/RouteGuard/ForLogged';
 import ForGuests from './components/RouteGuard/ForGuests';
+import ForOwner from './components/RouteGuard/ForOwners';
 
 
 
@@ -26,9 +27,9 @@ import LoginError from './components/Errors/LoginError';
 
 
 function App() {
-     const auth = useContext(AuthContext);
+     const {_id} = useContext(AuthContext);
 
-     let isLogged = !!auth?._id;
+     let isLogged = !!_id;
 
     return (
 
@@ -45,9 +46,10 @@ function App() {
 
                     <Route path='/publish' element={ForLogged({isLogged, redirect: <AnimalCreate />})} />
                     <Route path='/animals' element={<Animals />} />
-                    <Route path='/animals/:id' element={<AnimalInfo />} />
-                    <Route path='/animals/:id/edit' element={<AnimalEdit />} />
-                    <Route path='/animals/:id/remove' element={<AnimalInfo />} />
+                    <Route path='/animals/:id' element={<AnimalInfo /> }  />
+
+                    <Route path='/animals/:id/edit' element={ForLogged({isLogged, redirect: <AnimalEdit />})} />
+                    <Route path='/animals/:id/remove' element={ForLogged({isLogged, redirect: <AnimalInfo />})} />
 
                     <Route path='/login/error' element={<LoginError />} />
 

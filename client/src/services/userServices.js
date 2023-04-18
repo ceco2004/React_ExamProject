@@ -2,51 +2,56 @@ import * as url from '../constans/url';
 
 
 
-export async function login(userData){
+export async function login(userData) {
 
-    try{
+    try {
         
 
-        const response = await fetch( url.loginUrl, {
+        const response = await fetch(url.loginUrl, {
             method: "POST",
             headers: {
                 "content-type": "application/json"
             },
-            body: JSON.stringify(userData)});
-            
-            const result = await response.json();
-            
-            
-            return result;
+            body: JSON.stringify(userData)
+        });
 
-        } catch(e){
+        const result = await response.json();
 
-            console.log("error");
-            return {
-                error: e
-            }
+
+        return result;
+
+    } catch (e) {
+        return {
+            error: e
         }
+    }
 }
 
 
 
-export async function register(userData){
-    const response = await fetch(url.registerUrl, {
-        method: "POST",
-        headers: {
-            "content-type": "application/json"
-        },
-        body: JSON.stringify(userData)
-    });
-    const result = await response.json();
-    return result;
+export async function register(userData) {
+    try {
+        const response = await fetch(url.registerUrl, {
+            method: "POST",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(userData)
+        });
+        const result = await response.json();
+        return result;
+    } catch (e) {
+        return {
+            error: e
+        }
+    }
 }
 
 
-export async function logout(accessToken){
+export async function logout(accessToken) {
 
     const response = await fetch(url.logOutUrl, {
-        headers:{
+        headers: {
             "X-Authorization": accessToken
         }
     });
