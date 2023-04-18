@@ -8,8 +8,9 @@ import Navbar from './components/Navbar/Navbar';
 import Login from './components/Users/Login';
 import Register from './components/Users/Register';
 import Logout from './components/Users/Logout';
-import CreateAnimal from './components/Animals/CreateAnimal';
+import AnimalCreate from './components/Animals/AnimalCreate';
 import AnimalInfo from './components/Animals/AnimalInfo';
+import AnimalEdit from './components/Animals/AnimalEdit';
 
 import { AnimalsContextProvider } from './contexts/AnimalsContext';
 
@@ -30,9 +31,10 @@ function App() {
                     <Route path='/register' element={<Register />} />
                     <Route path='/logout' element={<Logout />} />
 
-                    <Route path='/publish' element={<CreateAnimal />} />
+                    <Route path='/publish' element={<AnimalCreate />} />
                     <Route path='/animals' element={<Animals />} />
                     <Route path='/animals/:id' element={<AnimalInfo />} />
+                    <Route path='/animals/:id/edit' element={<AnimalEdit />} />
 
                 </Routes>
             </AnimalsContextProvider>

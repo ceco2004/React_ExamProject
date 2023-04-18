@@ -4,7 +4,7 @@ import useForm from '../../hooks/useForm';
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-export default function CreateAnimal() {
+export default function AnimalCreate() {
 
     const navigate = useNavigate();
 
@@ -27,8 +27,6 @@ export default function CreateAnimal() {
 
     async function onSuggestHandler(e) {
         e.preventDefault();
-
-        console.log("errors");
 
         const animalData = { ...values, ownerEmail: email };
 

@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export default function useForm(initValues) {
-    const [values, setValues] = useState(initValues);
+    const [values, setValues] = useState(initValues || {});
     const [errors, setErrors] = useState({});
 
     function changeHandler(e) {
@@ -22,14 +22,13 @@ export default function useForm(initValues) {
 
 
     function validateForm(e) {
-        console.log("Validating form...")
         let message = "";
 
 
         switch (e.target.name) {
             case "password":
             case "rePass":
-                if (values[e.target.name].length < 3 || values[e.target.name].length > 6) {
+                if (values[e.target.name]?.length < 3 || values[e.target.name]?.length > 6) {
                     message = messages.password
                 };
 
@@ -39,31 +38,30 @@ export default function useForm(initValues) {
                 }
                 break;
             case "email":
-                if (!values[e.target.name].includes("@")) {
+                if (!values[e.target.name]?.includes("@")) {
                     message = messages.email;
                 }
                 break;
             case "name":
             case "city":
-                console.log("check name/city...")
-                if(values[e.target.name].length < 2) {
+                if(values[e.target.name]?.length < 2) {
                      message = messages.city;
                  }
                  break;
             case "age":
             case "weight":
-                if(Number(values[e.target.name]) <= 0) {
+                if(values[e.target.name] && Number(values[e.target.name]) <= 0) {
                     message = messages.age;
                 }
                 break;
             case "imageUrl":
             case "ownerPhone":
-                if(values[e.target.name].length < 1){
+                if(values[e.target.name]?.length < 1){
                     message = messages.imageUrl;
                 }
                 break;
             case "description":
-                if(values[e.target.name].length < 50){
+                if(values[e.target.name]?.length < 50){
                     message = messages.description;
                 }
                 break;

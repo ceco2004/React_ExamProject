@@ -1416,7 +1416,7 @@
                 "_createdOn": 1681747810191
             },
             "d1d29090-8503-43f0-b96c-673746fd9808": {
-                "_ownerId":- "d8a18587-b43b-4de0-b0fca65ce27059dd",
+                "_ownerId": "d8a18587-b43b-4de0-b0fca65ce27059dd",
                 "name": "Stamat",
                 "age": "21",
                 "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Giraffe_standing.jpg",

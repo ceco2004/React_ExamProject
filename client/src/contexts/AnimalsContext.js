@@ -11,12 +11,12 @@ export function AnimalsContextProvider({ children }) {
 
     useEffect(() => {
         animalServices.getAll()
-        .then(a => setAnimals(a))
+            .then(a => setAnimals(a))
     }, [])
-   
+
 
     async function onCreateAnimal(animalData, accessToken) {
-      
+
         const animal = animalServices.createAnimal(animalData, accessToken);
         setAnimals(state => ([...state, animal]));
 
@@ -24,14 +24,21 @@ export function AnimalsContextProvider({ children }) {
 
 
 
-    async function onEditAnimal(animalData){
+    async function onEditAnimal(animalData, accessToken) {
+
         //edit animal if success edit state
+
+        const editedAnimal = await animalServices.update(animalData, accessToken);
+        
+
+       setAnimals(state => state.map(a => a._id === editedAnimal._id ? editedAnimal : a));
+
         //TODO...
     }
 
 
 
-    async function onDeleteAnimal(animalId){
+    async function onDeleteAnimal(animalId) {
         //remove animal from server if success remove it from state
         //TODO...
     }
