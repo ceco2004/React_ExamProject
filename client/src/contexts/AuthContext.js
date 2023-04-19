@@ -14,7 +14,7 @@ export function AuthContextProvider({ children }) {
    
         const result = await userServices.login(userData);
 
-        if(result?.message){
+        if(result?.error || result?.message){
             return result;
         }
         else{

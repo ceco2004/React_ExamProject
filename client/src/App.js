@@ -16,7 +16,6 @@ import Home from './components/Home/Home';
 
 import ForLogged from './components/RouteGuard/ForLogged';
 import ForGuests from './components/RouteGuard/ForGuests';
-import ForOwner from './components/RouteGuard/ForOwners';
 
 
 
@@ -42,6 +41,7 @@ function App() {
 
                     <Route path='/login' element={ForGuests({isLogged, redirect: <Login />})} />
                     <Route path='/register' element={ForGuests({isLogged, redirect: <Register />})} />
+                    
                     <Route path='/logout' element={ForLogged({isLogged, redirect: <Logout />})} />
 
                     <Route path='/publish' element={ForLogged({isLogged, redirect: <AnimalCreate />})} />

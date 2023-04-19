@@ -6,7 +6,6 @@ export async function login(userData) {
 
     try {
 
-
         const response = await fetch(url.loginUrl, {
             method: "POST",
             headers: {
@@ -23,10 +22,7 @@ export async function login(userData) {
         } else {
             const result = await response.json();
             return result;
-
         }
-
-
 
 
     } catch (e) {

@@ -23,15 +23,18 @@ export default function Login() {
                 errors.password = err.message;
                 navigate("/login")
             }
-            else{
-
-                return navigate("error")
-            }
+            
+        }
+        else if(err?.error){
+            navigate("error")
         }
         else{
 
             navigate("/animals");
         }
+        
+
+        
 
     }
 
