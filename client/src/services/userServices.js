@@ -5,7 +5,7 @@ import * as url from '../constans/url';
 export async function login(userData) {
 
     try {
-        
+
 
         const response = await fetch(url.loginUrl, {
             method: "POST",
@@ -15,10 +15,19 @@ export async function login(userData) {
             body: JSON.stringify(userData)
         });
 
-        const result = await response.json();
+        if (response.status === 403) {
+            return {
+                error: null,
+                message: "Username and/or password are wrong"
+            }
+        } else {
+            const result = await response.json();
+            return result;
+
+        }
 
 
-        return result;
+
 
     } catch (e) {
         return {

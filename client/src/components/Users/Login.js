@@ -15,12 +15,23 @@ export default function Login() {
 
         const userData = { email: values.email, password: values.password };
 
-        const result = await authContext.onLogin(userData);
+        const err = await authContext.onLogin(userData);
 
-        if(result?.error){
-           return navigate("error")
+        if(err?.message){
+            if(err.message){
+                errors.email = err.message;
+                errors.password = err.message;
+                navigate("/login")
+            }
+            else{
+
+                return navigate("error")
+            }
         }
-        navigate("/animals");
+        else{
+
+            navigate("/animals");
+        }
 
     }
 

@@ -8,15 +8,18 @@ export function AuthContextProvider({ children }) {
 
     const [context, setContext] = useState({});
 
+
+
     async function onLogin(userData) {
-        userServices.login(userData)
-        .then(result => {
-           
-            if(result.error){
-                return result;
-            }
-            setContext(result)
-        });
+   
+        const result = await userServices.login(userData);
+
+        if(result?.message){
+            return result;
+        }
+        else{
+            setContext(result);
+        }
     }
 
 
