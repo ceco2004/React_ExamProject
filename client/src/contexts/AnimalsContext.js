@@ -18,7 +18,7 @@ export function AnimalsContextProvider({ children }) {
 
     async function onCreateAnimal(animalData, accessToken) {
 
-        const animal = animalServices.createAnimal(animalData, accessToken);
+        const animal = await animalServices.createAnimal(animalData, accessToken);
         setAnimals(state => ([...state, animal]));
 
     }
